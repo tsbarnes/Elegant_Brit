@@ -4,6 +4,10 @@ Simple, colorful, and elegant.  I am not the original author of the
 Elegant Brit themes, just a fan who has modified and updated them to
 work nicely with Ubuntu Unity, GNOME 3, and XFCE 4.12.
 
+![XFCE desktop](http://i.imgur.com/nBMhCut.png)
+![Geary](http://i.imgur.com/tNFCW3z.png)
+![XFCE WhiskerMenu](http://i.imgur.com/vAfkJ0R.png)
+
 ## Primary changes from the original versions
 
 ### GTK+ 2
