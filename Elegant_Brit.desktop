@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Elegant_Brit
+Name[en_US]=Elegant_Brit
+Comment=Simple, colorful, and elegant
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Elegant_Brit
+MetacityTheme=Elegant_Brit
+IconTheme=Numix-Circle
+CursorTheme=DMZ-White

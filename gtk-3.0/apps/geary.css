@@ -1,0 +1,4 @@
+.folder-frame .view.cell:selected,
+ConversationListView.view.cell:selected {
+  color: @selected_fg_color;
+}
