@@ -407,21 +407,21 @@ GtkScrolledWindow.frame {
   padding: 2px;
   border-color: @notebook_border;
   border-style: solid;
-  border-width: 1px;
+  border-width: 0;
   background-color: @theme_base_color;
-  -GtkNotebook-tab-overlap: -2px;
-  -GtkNotebook-tab-curvature: 2px;
+  -GtkNotebook-tab-overlap: 1px;
+  -GtkNotebook-tab-curvature: 0;
 }
 
 .notebook tab {
-  padding: 3px 8px 0;
+  padding: 3px 8px;
   background-color: @theme_bg_color;
-  border-radius: 0;
+  border-width: 1px;
   -adwaita-focus-border-radius: 0;
 }
 
 .notebook tab:active {
-  border-width: 0;
+  border-width: 1px 1px 0;
   border-color: @notebook_border;
   background: repeat-x right top url("assets/selected-tab.png");
 }
@@ -433,6 +433,11 @@ GtkScrolledWindow.frame {
   border-image: none;
   background-color: alpha (@theme_bg_color, 0);
   background-image: none;
+  color: @theme_fg_color;
+}
+
+.notebook tab .button:hover {
+  color: @selected_bg_color;
 }
 
 /* FIXME: background behind tabs -- slight gradient continuing from menubar */
