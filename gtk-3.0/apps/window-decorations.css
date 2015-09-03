@@ -1,4 +1,5 @@
 /* Header bars */
+
 .header-bar .button.text-button {
   padding: 2px 6px;
 }
@@ -10,15 +11,16 @@
 /*********************************
  * CSD (Client Side Decorations) *
  *********************************/
+
 .titlebar,
 .titlebar:backdrop,
 .titlebar.header-bar,
 .titlebar.header-bar:backdrop {
-	border-radius: 0;
-	padding: 0px 10px 0px 10px;
-  background-image: none;
   background-color: @chrome_bg_color;
+  background-image: none;
+  border-radius: 0;
   color: @chrome_fg_color;
+  padding: 0 10px 0 10px;
 }
 
 .header-bar .title,
@@ -27,7 +29,7 @@
 .titlebar.header-bar .title:backdrop,
 .titlebar .title,
 .titlebar .title:backdrop {
-    font: bold;
+  font: bold;
 }
 
 .header-bar .subtitle,
@@ -35,24 +37,25 @@
 .titlebar.header-bar .subtitle,
 .titlebar.header-bar .subtitle:backdrop {
   font-size: smaller;
-  opacity: 0.5;
+  opacity: .5;
 }
 
 .tiled .titlebar,
 .tiled .titlebar:backdrop {
-	border-radius: 0;
+  border-radius: 0;
 }
 
 .maximized .titlebar,
 .maximized .titlebar:backdrop {
-	border-radius: 0;
   border: none;
+  border-radius: 0;
 }
 
 /* this is the default titlebar that is added by GTK
  * when client-side decorations are in use and the application
  * did not set a custom titlebar.
  */
+
 .titlebar {
   border: 1px solid @base_color;
   border-bottom: 0;
@@ -68,18 +71,18 @@
 
 .titlebar.default-decoration,
 .titlebar.default-decoration:backdrop {
-	border: 1px solid @base_color;
-	box-shadow: none;
+  border: 1px solid @base_color;
+  box-shadow: none;
 }
 
 .titlebar .titlebutton,
 .titlebar .titlebutton:backdrop,
 .header-bar .button,
 .header-bar .button:backdrop {
-	padding: none;
-  border: none;
   background-color: transparent;
+  border: none;
   color: @chrome_fg_color;
+  padding: none;
 }
 
 .titlebar .titlebutton:active,
@@ -91,42 +94,47 @@
 
 .titlebar .titlebutton:backdrop,
 .header-bar .button:backdrop {
-	icon-shadow: none;
+  icon-shadow: none;
 }
 
 .window-frame,
 .window-frame:backdrop {
-	border-radius: 0;
-	border-width: 1px;
-	border-style: solid;
+  border-radius: 0;
+  border-style: solid;
+  border-width: 1px;
   box-shadow: 0 2px 3px @os_chrome_bg_color;
 }
 
 .window-frame.tiled,
 .window-frame.tiled:backdrop {
-	border-radius: 0;
+  border-radius: 0;
 }
 
 /************
  * popover  *
  ************/
+
 GtkPopover,
 .header-bar .menu,
 .header-bar .primary-toolbar .menu {
+  color: @menu_fg_color;
 }
 
 GtkPopover.background {
-  background-color: transparent;
+  background-color: @menu_bg_color;
+  background-image: none;
+  box-shadow: 0 2px 3px @os_chrome_bg_color;
 }
 
 GtkPopover:backdrop {
-  box-shadow: none;
+  background-color: @menu_bg_color;
+  background-image: none;
 }
 
 GtkPopover .separator {
-  border: 0;
   background-color: transparent;
-  color: alpha(currentColor, 0.1);
+  border: 0;
+  color: alpha(currentColor, .1);
   font-size: 80%;
   font-weight: bold;
 }
@@ -134,21 +142,35 @@ GtkPopover .separator {
 /* Popover menuitems are actually buttons. The following rules reset most of
  * the button styles for them.
  */
+
 GtkPopover .menuitem,
-GtkPopover .menuitem:active,
-GtkPopover .menuitem:hover,
-GtkPopover .menuitem:insensitive {
-  border-image: none;
+GtkPopover .menuitem:backdrop {
+  background: transparent;
   border: none;
-  text-shadow: none;
+  border-image: none;
   border-radius: none;
+  color: @menu_text_color;
+  text-shadow: none;
 }
 
-GtkPopover .menuitem:backdrop:hover,
-GtkPopover .menuitem:backdrop {
+GtkPopover .menuitem:hover,
+GtkPopover .menuitem:backdrop:hover {
+  background-color: @dark_bg_color;
+  color: @menu_text_color;
+}
+
+GtkPopover .menuitem:active,
+GtkPopover .menuitem:backdrop:active {
+  background-color: @silver;
+  color: @menu_text_color;
+}
+
+GtkPopover .menuitem:insensitive,
+GtkPopover .menuitem:backdrop:insensitive {
+  background-color: @menu_bg_color;
   border: none;
   border-image: none;
-  background: transparent;
+  color: mix (@menu_fg_color, @menu_bg_color, .6);
 }
 
 GtkPopover .menuitem:active,
@@ -156,46 +178,56 @@ GtkPopover .menuitem.check,
 GtkPopover .menuitem.check:active,
 GtkPopover .menuitem.radio,
 GtkPopover .menuitem.radio:active {
-  background-image: none;
   border: none;
 }
 
 GtkPopover .menuitem:insensitive,
 GtkPopover .menuitem *:insensitive {
   text-shadow: none;
-  background: none;
 }
 
 GtkPopover.osd {
+  border: none;
+  text-shadow: none;
 }
 
 GtkPopover > .list,
 GtkPopover > .view,
 GtkPopover > .toolbar {
-  background-image: none;
   background-color: transparent;
+  background-image: none;
 }
 
 GtkPopover .list-row {
+  border: none;
+  text-shadow: none;
 }
 
 GtkPopover .list-row:hover {
+  border: none;
+  text-shadow: none;
 }
 
 GtkPopover .frame {
+  border: none;
+  text-shadow: none;
 }
 
 GtkPopover .entry {
+  border: none;
+  text-shadow: none;
 }
 
 GtkPopover .entry:hover,
 GtkPopover .entry:focus,
-GtkPopover .entry:active  {
+GtkPopover .entry:active {
+  border: none;
+  text-shadow: none;
 }
 
 GtkPopover.osd > .toolbar .button {
+  background-color: transparent;
+  background-image: none;
   border-radius: 0;
   border-width: 0;
-  background-image: none;
-  background-color: transparent;
 }
