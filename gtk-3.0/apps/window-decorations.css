@@ -102,7 +102,7 @@
   border-radius: 0;
   border-style: solid;
   border-width: 1px;
-  box-shadow: 0 2px 3px @os_chrome_bg_color;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
 }
 
 .window-frame.tiled,
@@ -118,12 +118,22 @@ GtkPopover,
 .header-bar .menu,
 .header-bar .primary-toolbar .menu {
   color: @menu_fg_color;
-}
-
-GtkPopover.background {
+  background-clip: border-box;
   background-color: @menu_bg_color;
   background-image: none;
-  box-shadow: 0 2px 3px @os_chrome_bg_color;
+  border-radius: none;
+  border-color: shade(@menu_bg_color, .8);
+  border-width: 1px;
+  border-style: solid;
+  box-shadow: 0 0 10px alpha(black, .5);
+  margin: 10px;
+  padding: 2px;
+}
+
+GtkPopover.background,
+GtkPopover.background:backdrop {
+  background-color: @menu_bg_color;
+  background-image: none;
 }
 
 GtkPopover:backdrop {
@@ -167,7 +177,7 @@ GtkPopover .menuitem:backdrop:active {
 
 GtkPopover .menuitem:insensitive,
 GtkPopover .menuitem:backdrop:insensitive {
-  background-color: @menu_bg_color;
+  background-color: transparent;
   border: none;
   border-image: none;
   color: mix (@menu_fg_color, @menu_bg_color, .6);
@@ -188,6 +198,7 @@ GtkPopover .menuitem *:insensitive {
 
 GtkPopover.osd {
   border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
   text-shadow: none;
 }
 

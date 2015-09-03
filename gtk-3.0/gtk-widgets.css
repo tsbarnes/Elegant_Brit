@@ -690,19 +690,12 @@ OsScrollbar:insensitive {
   color: @dark_fg_color;
 }
 
-/*.menubar .menuitem:prelight {
-  color: @menu_text_color;
-  background-color: @menu_bg_color;
-  background-image: none;
-
-}*/
-
-/* remove the image from the prelight areas */
-
+.menubar .menuitem:active,
 .menubar .menuitem:prelight {
   background-image: none;
   background-color: @menu_bg_color;
   border-radius: 0;
+  color: @menu_text_color;
 }
 
 .menu .menuitem {
@@ -795,6 +788,10 @@ OsScrollbar:insensitive {
   padding: 2px;
 }
 
+.toolbar .button:hover {
+  background-color: @dark_bg_color;
+}
+
 .toolbar:insensitive {
   color: alpha (@theme_fg_color, .6);
 }
@@ -873,6 +870,7 @@ OsScrollbar:insensitive {
 
 .primary-toolbar .toolbar .button:hover,
 .primary-toolbar.toolbar .button:hover {
+  background-color: @dark_bg_color;
   border-color: @selected_bg_color;
   border-width: 2px;
   color: @dark_fg_color;
