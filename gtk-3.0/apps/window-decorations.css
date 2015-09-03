@@ -81,7 +81,7 @@
 .header-bar .button:backdrop {
   background-color: transparent;
   border: none;
-  color: @chrome_fg_color;
+  color: inherit;
   padding: none;
 }
 
